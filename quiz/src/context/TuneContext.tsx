@@ -44,7 +44,7 @@ const TuneProvider = ({ children }: {
         const gainNode = actx.createGain()
 
         osc.frequency.value = A;
-        gainNode.gain.value = 0.2;
+        gainNode.gain.value = 0.15;
         osc.connect(gainNode);
         gainNode.connect(out);
 
@@ -70,9 +70,9 @@ const TuneProvider = ({ children }: {
         osc2.frequency.value = A;
 
         const gain1 = actx.createGain();
-        gain1.gain.value = 0.05;
+        gain1.gain.value = 0.01;
         const gain2 = actx.createGain();
-        gain2.gain.value = 0.05;
+        gain2.gain.value = 0.01;
 
         const merger = actx.createChannelMerger(2);
 
@@ -104,13 +104,13 @@ const TuneProvider = ({ children }: {
         soprano.frequency.value = A;   // start at pick-up
 
         const bassGain = actx.createGain();
-        bassGain.gain.value = 0.23;
+        bassGain.gain.value = 0.25;
         const tenorGain = actx.createGain();
-        tenorGain.gain.value = 0.23;
+        tenorGain.gain.value = 0.25;
         const altoGain = actx.createGain();
-        altoGain.gain.value = 0.23;
+        altoGain.gain.value = 0.25;
         const sopranoGain = actx.createGain();
-        sopranoGain.gain.value = 0.23;
+        sopranoGain.gain.value = 0.25;
 
         const merger = actx.createChannelMerger(4);
         merger.connect(out);
