@@ -30,9 +30,9 @@ export default function OptionsWrapper({
     showWarning
 }: OptionsWrapperType) {
 
-    let randomOrder: number[] = useMemo(() => {
+    const randomOrder: number[] = useMemo(() => {
         if (index !== 0) {
-            let arr = [];
+            const arr = [];
             for (let i = 0; i < options.length; i++) {
                 if (Math.random() > 0.5) {
                     arr.push(i)
