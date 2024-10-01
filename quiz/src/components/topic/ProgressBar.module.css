@@ -1,0 +1,29 @@
+.container {
+    box-sizing: content-box;
+    border-radius: 999px;
+    padding: 4px;
+    background-color: var(--button-bg);
+    margin-top: 24px;
+    margin-bottom: 40px;
+}
+
+.container div {
+    height: 8px;
+    border-radius: 104px;
+    background-color: var(--Purple);
+    transition: width 0.5s;
+}
+
+@media (min-width: 33rem) {
+    .container {
+        margin-top: 40px;
+        margin-bottom: 64px;
+    }
+}
+
+@media (min-width: 75rem) {
+    .container {
+        margin-top: auto;
+        margin-bottom: 112px;
+    }
+}

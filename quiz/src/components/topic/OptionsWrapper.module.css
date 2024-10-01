@@ -1,0 +1,142 @@
+.container {
+    display: grid;
+    gap: 12px;
+}
+
+.container input[type=radio] {
+    opacity: 0;
+    position: absolute;
+}
+
+.container label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: var(--button-bg);
+    color: var(--primary-text);
+    border-radius: 12px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.container label:hover {
+    cursor: pointer;
+}
+
+.container label:hover .smallBox {
+    color: var(--Purple);
+}
+
+.container label:has(input[type=radio]:focus-visible) {
+    outline: 3px solid blue;
+}
+
+.container label:has(input[type=radio]:checked) {
+    border: 3px solid var(--Purple);
+    padding: 9px;
+}
+
+.container label:has(input[type=radio]:checked) .smallBox {
+    background-color: var(--Purple);
+    color: var(--Pure-White);
+}
+
+.smallBox {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    border-radius: 6px;
+    background-color: var(--Light-Grey);
+    color: var(--Grey-Navy);
+    display: grid;
+    place-items: center;
+    margin-right: 16px;
+}
+
+.container img {
+    margin-left: auto;
+    opacity: 0;
+}
+
+@media (min-width: 33rem) {
+    .container label {
+        border-radius: 24px;
+    }
+    .smallBox {
+        width: 3.5rem;
+        height: 3.5rem;
+        flex-basis: 3.5rem;
+        font-size: 1.75rem;
+        border-radius: 8px;
+        margin-right: 32px;
+    }    
+}
+
+@media (min-width: 75rem) {
+    .container label {
+        padding: 18px 20px;
+    }
+    .container label:has(input[type=radio]:checked) {
+        padding: 15px 17px;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .container label:has(input[type=radio]:focus) {
+        animation: bigger 0.3s;
+    }
+    .submitted:has(input[type=radio]:focus) {
+        animation: none !important;
+    }
+}
+
+@keyframes bigger {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.02;
+    }
+    100% {
+        scale: 1;
+    }
+}
+
+/* Styles when the answer is submitted */
+
+.submitted:hover {
+    cursor: not-allowed !important;
+}
+
+.submitted:hover .smallBox {
+    color: var(--Grey-Navy) !important;
+}
+
+.submitted:has(.correct:checked) {
+    border-color: var(--Green) !important;
+}
+
+.submitted:has(.wrong:checked) {
+    border-color: var(--Red) !important;
+}
+
+.submitted:has(.correct:checked) .smallBox {
+    color: var(--Pure-White) !important;
+    background-color: var(--Green) !important;
+}
+
+.submitted:has(.wrong:checked) .smallBox {
+    color: var(--Pure-White) !important;
+    background-color: var(--Red) !important;
+}
+
+.submitted:has(.correct) img {
+    opacity: 1;
+}
+
+.submitted:has(.wrong:checked) img {  
+    opacity: 1;
+}

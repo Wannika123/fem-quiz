@@ -1,0 +1,64 @@
+.top {
+    font-family: var(--font-rubik-italic);
+    color: var(--secondary-text);
+    font-size: 0.875rem;
+    margin-bottom: 12px;
+}
+
+.main h2 {
+    color: var(--primary-text);
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.main button {
+    width: 100%;
+    background-color: var(--Purple);
+    color: var(--Pure-White);
+    border: none;
+    border-radius: 12px;
+    padding: 19px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin: 12px 0;
+}
+
+.main button:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.warningTextContainer {
+    position: relative;
+}
+
+.warningText {
+    position: absolute;
+    width: 100%;
+    color: var(--Red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.125rem;
+    font-weight: 300;
+}
+
+@media (min-width: 33rem) {
+    .top {
+        font-size: 1.25rem;
+        margin-bottom: 27px;
+    }
+    .main h2 {
+        font-size: 2.25rem;
+    }
+    .main button {
+        border-radius: 24px;
+        font-size: 1.75rem;
+        padding: 32px;
+        margin: 32px 0;
+    }
+    .warningText {
+        font-size: 1.5rem;
+    }
+}

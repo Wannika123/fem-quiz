@@ -1,0 +1,64 @@
+.header {
+    display: flex;
+    min-height: 56px;
+    align-items: center;
+    padding: 16px 0;
+}
+
+.toggleBtnsContainer {
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 16px;
+}
+
+.toggleBtns {
+    box-sizing: content-box;
+    padding: 4px;
+    width: 2.5rem;
+    height: 1.25rem;
+    border-radius: 1.25rem;
+    position: relative;
+    background-color: var(--Purple);
+}
+
+.lightRadio,
+.darkRadio {
+    width: 50%;
+    height: 100%;
+    opacity: 0;
+}
+
+.ball {
+    width: 1.25rem;
+    height: 1.25rem;   
+    position: absolute;
+    border-radius: 50%;
+    top: 4px;  
+    background-color: var(--Pure-White);
+    transition: left 0.3s;
+}
+
+.lightRadio:checked ~ .ball {
+    left: 4px;
+}
+
+.darkRadio:checked ~ .ball {
+    left: calc(4px + 1.25rem);
+}
+
+.svg > path {
+    fill: var(--toggle-icon-color);
+}
+
+@media (min-width: 33rem) {
+    .header {
+        padding: 40px 0;
+    }
+}
+
+@media (min-width: 75rem) {
+    .header {
+        padding: 84px 0;
+    }
+}
