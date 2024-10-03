@@ -41,7 +41,7 @@ export default function OptionsWrapper({
                 }
             } 
             return arr
-        } else {
+        } else {    // to ensure that the DOM of server version and client version always match
             return [0, 1, 2, 3]
         }
         
@@ -106,7 +106,7 @@ export default function OptionsWrapper({
                         className={options[random] === correctAnswer ? styles.correct : styles.wrong}
                         checked={options[random] === selectedChoice}
                         onChange={e => updateChoice(e.target.value)}
-                        ref={refArr[randomOrder[i]]}
+                        ref={refArr[i]}
                     />
                     <Image 
                         src={options[random] === correctAnswer ? iconCorrect : iconWrong}
